@@ -10,12 +10,13 @@ A análise será desenvolvida no Databricks, utilizando Python e Pandas para exp
 
 Atrasos nas entregas podem prejudicar a experiência do cliente e indicar oportunidades de melhoria nas operações logísticas. Por isso, o projeto busca responder às seguintes perguntas:
 
-- Qual é a proporção de pedidos entregues com atraso?
-- Como os atrasos se distribuem entre transportadoras e armazéns?
-- Existe relação entre as condições climáticas e os atrasos?
-- A distância percorrida está associada ao tempo de entrega?
-- O número de tentativas de entrega e o tempo de processamento apresentam padrões relacionados aos atrasos?
-- Quais fatores operacionais merecem atenção para melhorar o desempenho das entregas?
+Qual é a dimensão do problema? Qual percentual de pedidos apresenta atraso e quantos dias, em média, esses pedidos ultrapassam o prazo previsto?
+
+Em quais etapas ou condições os atrasos são mais frequentes? Como o tempo de processamento, a distância percorrida e as condições climáticas se relacionam com os atrasos?
+
+Existem diferenças relevantes entre as operações? Como os atrasos variam entre armazéns e transportadoras, considerando também as características dos pedidos?
+
+Quais fatores merecem prioridade de investigação? Quais padrões identificados podem orientar ações para reduzir atrasos e melhorar o cumprimento dos prazos de entrega?
 
 ## Ferramentas utilizadas
 
