@@ -210,6 +210,7 @@ As maiores taxas apareceram em condições climáticas adversas. O resultado pod
 O dashboard no Power BI reúne os indicadores em duas páginas: uma visão geral e outra dedicada aos fatores operacionais.
 
 ### 6.1. Página 1 — Visão Geral
+![Visão Geral](powerbi/images/visao_geral.png)
 
 Apresenta os indicadores consolidados da operação.
 
@@ -227,6 +228,7 @@ Apresenta os indicadores consolidados da operação.
 A primeira página mostra o tamanho do problema e sua evolução mensal.
 
 ### 6.2. Página 2 — Análise Operacional
+![Análise de Atrasos](powerbi/images/analise_atrasos.png)
 
 A segunda página permite comparar os resultados por transportadora, armazém, clima e tempo de processamento.
 
