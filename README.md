@@ -1,7 +1,7 @@
 
 # Análise de Atrasos em Entregas | E-Commerce 2026
 
-**Projeto de Análise de Dados** | Python • Pandas • Databricks • SQL • Power BI
+**Projeto de Portfólio | Análise de Dados** | Python • Pandas • Databricks • SQL • Power BI
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)
@@ -15,16 +15,17 @@
 ## Sumário
 
 1. [Contexto e Problema de Negócio](#1-contexto-e-problema-de-negócio)
-2. [Perguntas de Negócio](#2-perguntas-de-negócio)
-3. [Tecnologias Utilizadas](#3-tecnologias-utilizadas)
-4. [Arquitetura e Processamento dos Dados](#4-arquitetura-e-processamento-dos-dados)
-5. [Principais Resultados e Insights](#5-principais-resultados-e-insights)
-6. [Dashboard Interativo — Power BI](#6-dashboard-interativo--power-bi)
-7. [Recomendações de Negócio](#7-recomendações-de-negócio)
-8. [Estrutura do Repositório](#8-estrutura-do-repositório)
-9. [Como Explorar o Projeto](#9-como-explorar-o-projeto)
-10. [Escopo e Limitações](#10-escopo-e-limitações)
-11. [Conclusão](#11-conclusão)
+2. [Fonte dos Dados](#2-fonte-dos-dados)
+3. [Perguntas de Negócio](#3-perguntas-de-negócio)
+4. [Tecnologias Utilizadas](#4-tecnologias-utilizadas)
+5. [Arquitetura e Processamento dos Dados](#5-arquitetura-e-processamento-dos-dados)
+6. [Principais Resultados e Insights](#6-principais-resultados-e-insights)
+7. [Dashboard Interativo — Power BI](#7-dashboard-interativo--power-bi)
+8. [Recomendações de Negócio](#8-recomendações-de-negócio)
+9. [Estrutura do Repositório](#9-estrutura-do-repositório)
+10. [Como Explorar o Projeto](#10-como-explorar-o-projeto)
+11. [Escopo e Limitações](#11-escopo-e-limitações)
+12. [Conclusão](#12-conclusão)
 
 ---
 
@@ -38,7 +39,17 @@ Foram analisados **50.000 pedidos**, considerando o tempo de processamento nos a
 
 ---
 
-## 2. Perguntas de Negócio
+## 2. Fonte dos Dados
+
+O projeto utiliza o dataset **E-Commerce Delivery and Shipping Data 2026**, disponibilizado na plataforma Kaggle.
+
+A base contém 50.000 registros de pedidos de e-commerce, com informações sobre prazos de entrega, transportadoras, armazéns, distâncias percorridas e condições climáticas.
+
+**Fonte:** [E-Commerce Delivery and Shipping Data 2026 — Kaggle](https://www.kaggle.com/datasets/datascikhan/e-commerce-delivery-and-shipping-data-2026)
+
+---
+
+## 3. Perguntas de Negócio
 
 A análise buscou responder às seguintes perguntas:
 
@@ -52,7 +63,7 @@ A análise buscou responder às seguintes perguntas:
 
 ---
 
-## 3. Tecnologias Utilizadas
+## 4. Tecnologias Utilizadas
 
 | Tecnologia | Aplicação no projeto |
 | :--- | :--- |
@@ -66,11 +77,11 @@ A análise buscou responder às seguintes perguntas:
 
 ---
 
-## 4. Arquitetura e Processamento dos Dados
+## 5. Arquitetura e Processamento dos Dados
 
 Os dados foram organizados em duas camadas, **Raw** e **Silver**, no Databricks. O tratamento foi feito com Python e Pandas.
 
-### 4.1. Camada Raw — Dados Brutos
+### 5.1. Camada Raw — Dados Brutos
 
 A Raw guarda o arquivo original, sem alterações.
 
@@ -78,7 +89,7 @@ A Raw guarda o arquivo original, sem alterações.
 - **Armazenamento:** Databricks Volume, no diretório `/Volumes/.../raw/`.
 - **Finalidade:** Preservar os dados brutos para rastreabilidade e utilização nas etapas posteriores.
 
-### 4.2. Camada Silver — Tratamento e Qualidade dos Dados
+### 5.2. Camada Silver — Tratamento e Qualidade dos Dados
 
 Na Silver, os dados passaram por verificações de qualidade, limpeza e padronização com Python e Pandas.
 
@@ -111,7 +122,7 @@ Após o tratamento e as verificações de qualidade:
 - A tabela `workspace.default.entregas_tratadas` foi disponibilizada no Unity Catalog.
 - A tabela foi utilizada nas consultas SQL para exploração dos dados, cálculo de indicadores e análises dos fatores associados aos atrasos.
 
-### 4.3. Fluxo de Processamento
+### 5.3. Fluxo de Processamento
 
 ```text
 Dataset CSV
@@ -136,7 +147,7 @@ O projeto não contempla a implementação de uma camada Gold. As análises fora
 
 ---
 
-## 5. Principais Resultados e Insights
+## 6. Principais Resultados e Insights
 
 Os principais números da análise estão resumidos abaixo.
 
@@ -157,7 +168,7 @@ Os principais números da análise estão resumidos abaixo.
 | Clima | Neve | 93,51% de atraso |
 | Clima | Tempestades | 91,00% de atraso |
 
-### 5.1. Panorama Geral das Entregas
+### 6.1. Panorama Geral das Entregas
 
 Dos **50.000 pedidos analisados**, **28.162 apresentaram atraso**, correspondendo a **56,32% da operação**.
 
@@ -165,7 +176,7 @@ Entre os pedidos atrasados, a duração média foi de **2,27 dias**, com mediana
 
 Mais da metade dos pedidos chegou depois do prazo previsto.
 
-### 5.2. Tempo de Processamento dos Pedidos
+### 6.2. Tempo de Processamento dos Pedidos
 
 Os pedidos atrasados apresentaram tempo médio de processamento de **16,59 horas**, enquanto os pedidos entregues no prazo registraram **11,60 horas**.
 
@@ -173,7 +184,7 @@ A diferença observada foi de **4,99 horas**.
 
 Os pedidos atrasados levaram, em média, mais tempo para ser processados. Essa diferença merece investigação, mas não é suficiente para afirmar que o processamento causou o atraso.
 
-### 5.3. Desempenho das Transportadoras
+### 6.3. Desempenho das Transportadoras
 
 Foram identificadas diferenças nas taxas de atraso entre os parceiros logísticos.
 
@@ -183,7 +194,7 @@ Foram identificadas diferenças nas taxas de atraso entre os parceiros logístic
 
 A diferença entre as transportadoras é relevante, mas a comparação precisa considerar também distância, modalidade de envio e prazo prometido.
 
-### 5.4. Distância Percorrida
+### 6.4. Distância Percorrida
 
 A análise por faixas de distância apresentou os seguintes resultados:
 
@@ -194,7 +205,7 @@ As rotas mais longas apresentaram maior proporção de entregas atrasadas.
 
 Vale verificar se os prazos prometidos para rotas longas estão adequados às condições dessas entregas.
 
-### 5.5. Condições Climáticas
+### 6.5. Condições Climáticas
 
 As maiores taxas de atraso identificadas nas condições climáticas analisadas foram:
 
@@ -205,11 +216,11 @@ As maiores taxas apareceram em condições climáticas adversas. O resultado pod
 
 ---
 
-## 6. Dashboard Interativo — Power BI
+## 7. Dashboard Interativo — Power BI
 
 O dashboard no Power BI reúne os indicadores em duas páginas: uma visão geral e outra dedicada aos fatores operacionais.
 
-### 6.1. Página 1 — Visão Geral
+### 7.1. Página 1 — Visão Geral
 ![Visão Geral](powerbi/images/visao_geral.png)
 
 Apresenta os indicadores consolidados da operação.
@@ -227,7 +238,7 @@ Apresenta os indicadores consolidados da operação.
 
 A primeira página mostra o tamanho do problema e sua evolução mensal.
 
-### 6.2. Página 2 — Análise Operacional
+### 7.2. Página 2 — Análise Operacional
 ![Análise de Atrasos](powerbi/images/analise_atrasos.png)
 
 A segunda página permite comparar os resultados por transportadora, armazém, clima e tempo de processamento.
@@ -258,29 +269,29 @@ Os filtros permitem consultar os indicadores em diferentes recortes.
 
 ---
 
-## 7. Recomendações de Negócio
+## 8. Recomendações de Negócio
 
 Os resultados apontam quatro frentes que a empresa pode investigar.
 
-### 7.1. Revisão dos Prazos de Entrega para Longas Distâncias
+### 8.1. Revisão dos Prazos de Entrega para Longas Distâncias
 
 As rotas de 1.500 km ou mais apresentaram taxa de atraso de **63,89%**, superior à observada nas rotas curtas.
 
 **Ação sugerida:** revisar os prazos prometidos para rotas longas, considerando distância, modalidade de transporte e histórico das entregas.
 
-### 7.2. Investigação dos Tempos de Processamento
+### 8.2. Investigação dos Tempos de Processamento
 
 Os pedidos atrasados apresentaram tempo médio de processamento **4,99 horas superior** ao dos pedidos entregues no prazo.
 
 **Ação sugerida:** examinar as etapas de separação e expedição para entender onde o processamento demora mais.
 
-### 7.3. Avaliação dos Impactos Climáticos
+### 8.3. Avaliação dos Impactos Climáticos
 
 As entregas realizadas sob condições de neve e tempestade apresentaram taxas de atraso superiores a 90%.
 
 **Ação sugerida:** avaliar o uso de informações meteorológicas no planejamento das rotas e dos prazos.
 
-### 7.4. Monitoramento do Desempenho das Transportadoras
+### 8.4. Monitoramento do Desempenho das Transportadoras
 
 A diferença de **18,41 pontos percentuais** entre GlobalExpress e SwiftShip indica variação relevante nas taxas de atraso observadas.
 
@@ -288,7 +299,7 @@ A diferença de **18,41 pontos percentuais** entre GlobalExpress e SwiftShip ind
 
 ---
 
-## 8. Estrutura do Repositório
+## 9. Estrutura do Repositório
 
 ```text
 analise-entregas-logistica/
@@ -328,7 +339,7 @@ Armazena o relatório Power BI e sua documentação específica.
 
 ---
 
-## 9. Como Explorar o Projeto
+## 10. Como Explorar o Projeto
 
 ### Análises em Python e SQL
 
@@ -346,7 +357,7 @@ Para explorar o dashboard, é necessário utilizar o Power BI Desktop e, quando 
 
 ---
 
-## 10. Escopo e Limitações
+## 11. Escopo e Limitações
 
 ### Dataset estático
 
@@ -368,7 +379,7 @@ Os resultados se referem à base utilizada e não devem ser generalizados para o
 
 ---
 
-## 11. Conclusão
+## 12. Conclusão
 
 A taxa de atrasos encontrada foi de **56,32%**. Também foram observadas diferenças por transportadora, distância, clima e tempo de processamento.
 
